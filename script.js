@@ -9,7 +9,7 @@ const gridSize = 20;
 let snake = [{ x: 10, y: 10 }];
 let food = generateFood();
 // define high score
-let highScore = 0;
+let highScore = localStorage.getItem("highestScore") || 0;
 
 // set initial direction of the snake head
 let direction = "right";
@@ -197,6 +197,9 @@ function updateHighScore() {
   if (currentScore > highScore) {
     highScore = currentScore;
     highScoreText.textContent = highScore.toString().padStart(3, "0");
+
+    // Save highest score to localStorage
+    localStorage.setItem("highestScore", highScore);
   }
   highScoreText.style.display = "block";
 }
@@ -207,3 +210,12 @@ function stopGame() {
   instructionText.style.display = "block";
   logo.style.display = "block";
 }
+
+// Load highest score on window load
+window.addEventListener("load", () => {
+  const highestScore = localStorage.getItem("highestScore");
+  if (highestScore !== null) {
+    highScore = parseInt(highestScore, 10);
+    highScoreText.textContent = highScore.toString().padStart(3, "0");
+  }
+});
