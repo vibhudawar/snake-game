@@ -18,8 +18,8 @@ Designed a snake game in order to learn JS fundamentals and apply them to make s
 
 <table>
   <tr>
-    <td><img src="assets/game-start.png" alt="Snake Game Starting Screen" width="250"></td>
-    <td><img src="assets/game.png" alt="Game" width="250"></td>
+    <td><img src="assets/game-start.png" alt="Snake Game Starting Screen" width="500"></td>
+    <td><img src="assets/game.png" alt="Game" width="500"></td>
   </tr>
 </table>
 
